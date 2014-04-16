@@ -1,6 +1,8 @@
+## Music Sampler
+
 There were no existing open source methods for creating custom soundboards, so we built one for the [Emory Hackathon](https://www.hackerleague.org/hackathons/emory-hackathon-2014-co-hosted-by-microsoft/hacks/musiqu-dot-es)
 
-We adopted much of the code from Chris Wilson's [Audio Recorder](https://github.com/cwilso/AudioRecorder)
+We adopted some of the code from Chris Wilson's [Audio Recorder](https://github.com/cwilso/AudioRecorder). Thanks Chris!
 
 To-Do:
 - Refactor messy code / DRY it up
