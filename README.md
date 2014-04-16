@@ -1,4 +1,4 @@
-## Music Sampler
+## Custom Soundboard
 
 There were no existing open source methods for creating custom soundboards, so we built one for the [Emory Hackathon](https://www.hackerleague.org/hackathons/emory-hackathon-2014-co-hosted-by-microsoft/hacks/musiqu-dot-es)
 
