@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Audio Recorder</title>
+
+        <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+
+	<script src="js/audiodisplay.js"></script>
+	<script src="js/recorderjs/recorder.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/mousetrap.min.js"></script>
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+  
+		    $('body').on('keydown keyup', function( e ) {
+      
+		      var key = e.which;
+		      var io  = e.type=="keydown" ? 0 : 1; // "0"if keydown; "1" if keyup
+		      var keyAction = {                    // Object to store our stuff
+												//  keyCode : [(0)KEYDOWN, (1)KEYUP]
+		        65:
+		        82  : ['red' ,'white'],            // R key
+		        66  : ['blue','white']             // B key  (last one without comma!)
+		      };
+		      var propObj = {};                    // Object to store property + value for jQuery methods
+		      var keyArr = keyAction[key];
+
+		      if(typeof keyArr != 'undefined') {   // Test keyArr (82, 66) is returned/populated to prevent errors
+		         propObj.background = keyAction[key][io];   // Created the jQ Method's object e.g: {background:"red"}
+		         $(this).css(propObj);             // Finally create / use 
+		      }
+
+		    });
+
+		});
+	</script>
+	<style>
+
+	#controls {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 20%;
+		width: 100%;
+	}
+	#record { height: 15vh; }
+	#record.recording { 
+		background: red;
+		background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+		background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+		background: radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+	}
+
+	.container{
+		margin-left: 20%;
+	}
+
+	.lol, .lol2{
+		margin-left: 15%;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+        <img src="img/musiques-logo.png" />
+        <div class="lol" style="margin-top: 40px">
+	        
+	        <a id="record1" class="btn btn-block btn-lg btn-sample1" style="padding: 40px 40px 40px 40px; width: 20%; display:inline; " onmousedown="toggleRecording(this)" onmouseup="toggleRecording(this)">1</a>
+
+	        <a id="record2" class="btn btn-block btn-lg btn-sample2" style="padding: 40px 40px 40px 40px; width: 20%; display:inline;" onmousedown="toggleRecording2(this);" onmouseup="toggleRecording2(this);">2</a>
+
+	        <a id="record3" class="btn btn-block btn-lg btn-sample3" style="padding: 40px 40px 40px 40px; width: 20%; display:inline;" onmousedown="toggleRecording3(this);" onmouseup="toggleRecording3(this)">3</a>
+
+	        <a id="record4" class="btn btn-block btn-lg btn-sample4" style="padding: 40px 40px 40px 40px; width: 20%; display:inline;" onmousedown="toggleRecording4(this);" onmouseup="toggleRecording4(this)">4</a>
+
+	        <a id="record5" class="btn btn-block btn-lg btn-sample5" style="padding: 40px 40px 40px 40px; width: 20%; display:inline;" onmousedown="toggleRecording5(this);" onmouseup="toggleRecording5(this)">5</a>
+
+	        <a id="record6" class="btn btn-block btn-lg btn-inverse" style="padding: 40px 40px 40px 40px; width: 20%; display:inline;" onmousedown="toggleRecording6(this);" onmouseup="toggleRecording6(this)">6</a>
+
+		</div>
+
+		<div class="lol2" style="margin-top: 120px">
+	        
+	        <a id="play1" class="btn btn-block btn-lg btn-sample1" style="display: none; padding: 40px 40px 40px 40px; width: 20%;  " onmousedown="audioRecorder.getBufferCallback( buf1);" > 1 </a>
+
+	        <a id="play2" class="btn btn-block btn-lg btn-sample2" style="padding: 40px 40px 40px 40px; width: 20%; display:none;" onmousedown="audioRecorder.getBufferCallback( buf2);">2</a>
+
+	        <a id="play3" class="btn btn-block btn-lg btn-sample3" style="padding: 40px 40px 40px 40px; width: 20%; display:none;" onmousedown="audioRecorder.getBufferCallback( buf3);">3</a>
+
+	        <a id="play4" class="btn btn-block btn-lg btn-sample4" style="padding: 40px 40px 40px 40px; width: 20%; display:none;" onmousedown="audioRecorder.getBufferCallback( buf4);">4</a>
+
+	        <a id="play5" class="btn btn-block btn-lg btn-sample5" style="padding: 40px 40px 40px 40px; width: 20%; display:none;" onmousedown="audioRecorder.getBufferCallback( buf5);">5</a>
+
+	        <a id="play6" class="btn btn-block btn-lg btn-inverse" style="padding: 40px 40px 40px 40px; width: 20%; display:none;" onmousedown="audioRecorder.getBufferCallback( buf6);">6</a>
+
+		</div>
+	</div>
+</body>
+</html>
