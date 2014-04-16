@@ -1,9 +1,9 @@
-# Audio Recorder
+There were no existing open source methods for creating custom soundboards, so we built one for the [Emory Hackathon](https://www.hackerleague.org/hackathons/emory-hackathon-2014-co-hosted-by-microsoft/hacks/musiqu-dot-es)
 
-This is a code snippet/example for using RecorderJS with the web audio input feature to record audio from
-[Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).  
+We adopted much of the code from Chris Wilson's [Audio Recorder](https://github.com/cwilso/AudioRecorder)
 
-Hosted live on [Web Audio Demos](http://webaudiodemos.appspot.com/AudioRecorder/index.html).
-Check it out, feel free to fork, submit pull requests, etc.
-
--Chris
+To-Do:
+- Refactor messy code / DRY it up
+- Dynamically add as many samples as you want (instead of just 6)
+- Allow keyboard shortcuts
+- Buffer re-use
